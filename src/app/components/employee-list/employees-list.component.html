@@ -1,0 +1,46 @@
+<div class="list row">
+  
+  <div class="col-md-6">
+    <h4>Employees List</h4>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Actions</th>
+          <th scope="col">Employee Id</th>
+          <th scope="col">Employee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i = index"
+        (click)="setActiveEmployee(employee, i)">
+          <td class="d-flex justify-content-evenly">
+            <button type="button" class="btn btn-primary btn-sm" routerLink="/employees/{{ employee.id }}">Edit</button>
+<button type="button" class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.id)">Delete</button>
+          </td>
+          <td>{{employee.employeeId}}</td>
+          <td>{{employee.name}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentEmployee">
+      <h4>Employee</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentEmployee.name }}
+      </div>
+      <div>
+        <label><strong>Employee Id:</strong></label>
+        {{ currentEmployee.employeeId }}
+      </div>
+      
+    </div>
+    <div *ngIf="!currentEmployee">
+      <br />
+      <p>Please click on a Employee...</p>
+    </div>
+  </div>
+</div>
