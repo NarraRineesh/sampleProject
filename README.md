@@ -7,7 +7,7 @@
 1.  Clone the project from github.
 
 ```bash
-git clone https://github.com/maitraysuthar/rest-api-nodejs-mongodb.git ./myproject
+git clone https://github.com/NarraRineesh/sampleProject.git
 ```
 
 ### Using manual download ZIP
